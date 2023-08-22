@@ -1,7 +1,9 @@
 <h1 dir="rtl">
 Currying
 </h1>
-![Currying](https://github.com/hosseinimh/javascript-tutorial/edit/main/currying/image1.webp)
+
+![Currying](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/currying/image1.webp)
+
 <h2 dir="rtl">
 Currying چیست؟
 </h2>
