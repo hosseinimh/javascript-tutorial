@@ -234,7 +234,7 @@ function sum(a) {
 }
 // const sum = a => b => b ? sum(a + b) : a;
 
-console.log(sum(7)(4)()); // 11
+console.log(sum(7)(4)(8)(2)()); // 21
 ```
 
 <h3 dir="rtl">
