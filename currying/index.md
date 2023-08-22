@@ -4,7 +4,7 @@ Currying
 
 <div align="center">
   
-![Currying](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/images/currying.png)
+![Currying](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/currying/images/currying.png)
 </div>
 
 <h2 dir="rtl">
@@ -152,19 +152,23 @@ const getApiURL = (apiHostname, resourceName, resourceId) => {
   return `https://${apiHostname}/api/${resourceName}/${resourceId}`;
 };
 
-const partial = (fn, ...argsToApply) => {
-  return (...restArgsToApply) => {
-    return fn(...argsToApply, ...restArgsToApply);
-  };
+const getUserURL = (userId) => {
+  return getApiURL("localhost:3000", "users", userId);
 };
 
-const getUserURL = partial(getApiURL, "localhost:3000", "users");
-const getOrderURL = partial(getApiURL, "localhost:3000", "orders");
-const getProductURL = partial(getApiURL, "localhost:3000", "products");
+const getOrderURL = (orderId) => {
+  return getApiURL("localhost:3000", "orders", orderId);
+};
 
-// یا
-
-const getUserURL = getApiURL.bind(null, "localhost:3000", "users");
-const getOrderURL = getApiURL.bind(null, "localhost:3000", "orders");
-const getProductURL = getApiURL.bind(null, "localhost:3000", "products");
+const getProductURL = (productId) => {
+  return getApiURL("localhost:3000", "products", productId);
+};
 ```
+
+<h3 dir="rtl">
+	Partial Application vs Currying
+</h3>
+
+<div dir="rtl">
+هدف از Partial Application، تبدیل تابعی با پیچیدگی و آرگومان‌های زیاد به تابعی با پیچیدگی، آرگومان‌ها و عملیات داخلی کمتر است. اما در Currying تابع اولیه تبدیل به زنجیره‌ای از closure ها می‌شود که هر کدام تنها یک آرگومان دارند.
+</div>
