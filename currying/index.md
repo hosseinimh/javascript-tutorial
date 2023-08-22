@@ -125,12 +125,12 @@ const peugeotNeededGas = neededGas(8);
 const prideNeededGas = neededGas(6);
 
 const peugeotMashTehNeededGas = peugeotNeededGas(800); // 64
-//  یا
+// یا
 // const peugeotMashTehNeededGas = neededGas(8)(800); // 64
 
-const prideMashTehNeededGas = prideNeededGas(800); //  48
+const prideMashTehNeededGas = prideNeededGas(800); // 48
 // یا
-// const prideMashTehNeededGas = neededGas(6)(800); //  48
+// const prideMashTehNeededGas = neededGas(6)(800); // 48
 ```
 
 <h3 dir="rtl">
@@ -232,7 +232,7 @@ function sum(a) {
     return a;
   };
 }
-//  یا
+// یا
 // const sum = a => b => b ? sum(a + b) : a;
 
 console.log(sum(7)(4)(8)(2)()); // 21
