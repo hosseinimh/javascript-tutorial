@@ -232,6 +232,7 @@ function sum(a) {
     return a;
   };
 }
+//  یا
 // const sum = a => b => b ? sum(a + b) : a;
 
 console.log(sum(7)(4)(8)(2)()); // 21
