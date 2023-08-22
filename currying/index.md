@@ -98,7 +98,7 @@ function neededGas(gasPerHundred, distance) {
 }
 ```
 
-فرض کنیم میزان بنزین مصرفی خودروی پژو در هر 100 کیلومتر 8 لیتر و پراید 6 لیتر باشد:
+فرض کنید میزان بنزین مصرفی خودروی پژو در هر 100 کیلومتر 8 لیتر و پراید 6 لیتر باشد:
 
 ```js
 const peugeotNeededGas = neededGas.bind(null, 8);
@@ -171,4 +171,87 @@ const getProductURL = (productId) => {
 
 <div dir="rtl">
 هدف از Partial Application، تبدیل تابعی با پیچیدگی و آرگومان‌های زیاد به تابعی با پیچیدگی، آرگومان‌ها و عملیات داخلی کمتر است. اما در Currying تابع اولیه تبدیل به زنجیره‌ای از closure ها می‌شود که هر کدام تنها یک آرگومان دارند.
+</div>
+
+<h2 dir="rtl">
+تمرین
+</h2>
+
+<h3 dir="rtl">
+1. پیاده سازی sum(2)(6)(1)
+</h3>
+
+```js
+// function sum(a, b, c) {
+//   return a + b + c;
+// }
+// console.log(sum(2,6,1));
+
+function sum(a) {
+  return function (b) {
+    return function (c) {
+      return a + b + c;
+    };
+  };
+}
+cosole.log(sum(2)(6)(1));
+```
+
+<h3 dir="rtl">
+2. پیاده سازی evaluate('sum')(5)(2)
+</h3>
+
+```js
+function evaluate(operation) {
+  return (a) => {
+    return (b) => {
+      if (operation === "sum") return a + b;
+      else if (operation === "multiply") return a * b;
+      else if (operation === "divide") return a / b;
+      else if (operation === "subtract") return a - b;
+      else return "No / Invalid Operation Selected";
+    };
+  };
+}
+
+const mul = evaluate("multiply");
+console.log(mul(5, 2)); // 10
+console.log(evaluate("sum")(5)(2)); // 7
+```
+
+<h3 dir="rtl">
+3. Infinite currying
+</h3>
+
+```js
+function sum(a) {
+  return function (b) {
+    if (b) {
+      return sum(a + b);
+    }
+    return a;
+  };
+}
+// const sum = a => b => b ? sum(a + b) : a;
+
+console.log(sum(7)(4)()); // 11
+```
+
+<h3 dir="rtl">
+4. DOM Manipulation
+</h3>
+
+```js
+function updateElementText(id) {
+  return function (content) {
+    document.getElementById(id).textContent = content;
+  };
+}
+
+const updateHeader = updateElementText("heading");
+updateHeader("Hello");
+```
+
+<div dir="rtl">
+با این روش، تابعی ساختیم که تنها وظیفه‌اش بروزرسانی متن عنصر heading است و می‌توان آن را بارها و بارها فراخوانی کرد بدون آن که نیازی باشد که هر بار تابع getElementById فراخوانی شود.
 </div>
