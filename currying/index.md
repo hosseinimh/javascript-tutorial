@@ -112,7 +112,7 @@ const peugeotMashTehNeededGas = peugeotNeededGas(800); // 64
 const prideMashTehNeededGas = prideNeededGas(800); //  48
 ```
 
-پیاده سازی کد بالا با closure به این شکل است:
+پیاده‌سازی کد بالا با closure به این شکل است:
 
 ```js
 function neededGas(gasPerHundred) {
