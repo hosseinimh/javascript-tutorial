@@ -42,7 +42,9 @@ const sumOfFive = sum.bind(null, 4);
 sumOfFive(8); // 12
 ```
 
-### استفاده از closure
+<h3 dir="rtl">
+استفاده از closure
+</h3>
 
 ```js
 const sum = function (a) {
@@ -57,7 +59,9 @@ const sumOfFive = sum(5);
 sumOfFive(7); // 12
 ```
 
-## مزایای استفاده از currying
+<h2 dir="rtl">
+مزایای استفاده از currying
+</h2>
 
 <h3 dir="rtl">
 1- code reusability
@@ -129,13 +133,19 @@ const prideMashTehNeededGas = prideNeededGas(800); //  48
 // const prideMashTehNeededGas = neededGas(6)(800); //  48
 ```
 
-#### 3- تفکیک تسک‌ها و خطایابی بهتر
+<h3 dir="rtl">
+3- تفکیک تسک‌ها و خطایابی بهتر
+</h3>
 
 با تبدیل کد به قسمت‌های کوچک‌تر، امکان تست هر بخش به صورت مجزا وجود دارد. همچنین از آن جا که هر تکه کد کار به خصوصی را انجام می‌دهد، single responsibility در کد، بهتر رعایت خواهد شد.
 
-## Partial Application
+<h2 dir="rtl">
+Partial Application
+</h2>
 
+<div dir="rtl">
 Partial Application تکنیکی است که تابعی با چندین آرگومان را به تابعی با آرگومان‌های کمتر تبدیل می‌کند.
+</div>
 
 ```js
 const getApiURL = (apiHostname, resourceName, resourceId) => {
