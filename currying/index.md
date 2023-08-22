@@ -2,7 +2,10 @@
 Currying
 </h1>
 
-![Currying](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/currying/image1.webp)
+<div align="center">
+  
+![Currying](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/images/currying.png)
+</div>
 
 <h2 dir="rtl">
 Currying چیست؟
@@ -105,6 +108,53 @@ const peugeotMashTehNeededGas = peugeotNeededGas(800); // 64
 const prideMashTehNeededGas = prideNeededGas(800); //  48
 ```
 
+پیاده سازی کد بالا با closure به این شکل است:
+
+```js
+function neededGas(gasPerHundred) {
+  return function (distance) {
+    return gasPerHundred * (distance % 100);
+  };
+}
+
+const peugeotNeededGas = neededGas(8);
+const prideNeededGas = neededGas(6);
+
+const peugeotMashTehNeededGas = peugeotNeededGas(800); // 64
+//  یا
+// const peugeotMashTehNeededGas = neededGas(8)(800); // 64
+
+const prideMashTehNeededGas = prideNeededGas(800); //  48
+// یا
+// const prideMashTehNeededGas = neededGas(6)(800); //  48
+```
+
 #### 3- تفکیک تسک‌ها و خطایابی بهتر
 
 با تبدیل کد به قسمت‌های کوچک‌تر، امکان تست هر بخش به صورت مجزا وجود دارد. همچنین از آن جا که هر تکه کد کار به خصوصی را انجام می‌دهد، single responsibility در کد، بهتر رعایت خواهد شد.
+
+## Partial Application
+
+Partial Application تکنیکی است که تابعی با چندین آرگومان را به تابعی با آرگومان‌های کمتر تبدیل می‌کند.
+
+```js
+const getApiURL = (apiHostname, resourceName, resourceId) => {
+  return `https://${apiHostname}/api/${resourceName}/${resourceId}`;
+};
+
+const partial = (fn, ...argsToApply) => {
+  return (...restArgsToApply) => {
+    return fn(...argsToApply, ...restArgsToApply);
+  };
+};
+
+const getUserURL = partial(getApiURL, "localhost:3000", "users");
+const getOrderURL = partial(getApiURL, "localhost:3000", "orders");
+const getProductURL = partial(getApiURL, "localhost:3000", "products");
+
+// یا
+
+const getUserURL = getApiURL.bind(null, "localhost:3000", "users");
+const getOrderURL = getApiURL.bind(null, "localhost:3000", "orders");
+const getProductURL = getApiURL.bind(null, "localhost:3000", "products");
+```
