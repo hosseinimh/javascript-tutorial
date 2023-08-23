@@ -97,3 +97,7 @@ Call Stack
   
 ![The Call Stack](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/images/call_stack.jpg)
 </div>
+
+<div dir="rtl">
+Call Stack ترتیب اجرای execution context ها را مدیریت می‌کند. فرآیند ذخیره‌سازی داده‌ها در استک، LIFO است یعنی آخرین ورودی اولین خروجی. با اجرای کد جاوااسکریپت، ابتدا global execution context در Call Stack؛ push می‌شود. هر بار که تابعی فراخوانی می‌شود exection context آن در استک push شده و بعد از برگشت از تابع pop می‌شود. به این ترتیب جاوااسکریپت دقیقا می‌داند که چه اسکوپ و متغیرهایی هم اکنون در حال استفاده است.
+</div>
