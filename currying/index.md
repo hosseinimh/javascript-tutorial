@@ -4,7 +4,7 @@ Currying
 
 <div align="center">
   
-![Currying](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/currying/images/currying.png)
+![Currying](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/images/currying.png)
 </div>
 
 <h2 dir="rtl">
