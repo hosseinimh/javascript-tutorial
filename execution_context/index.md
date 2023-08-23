@@ -39,7 +39,7 @@ Execution Context چیست؟
 <div dir="rtl">
 منظور از synchronous آن است که جاوااسکریپت خطوط دستور را یک به یک و به صورت <b>متوالی و پشت سر هم</b> اجرا می‌کند.
 </div>
-<p></p>
+
 <h2 dir="rtl">
 انواع execution context
 	</h2>
@@ -47,3 +47,27 @@ Execution Context چیست؟
 	<li>Global execution context: با اولین اجرای برنامه ایجاد می‌شود.</li>
 		<li>Function execution context: با هر بار فراخوانی تابع ایجاد می‌شود.</li>
 </ul>
+
+<h2 dir="rtl">
+ایجاد exeution context دو فاز دارد:
+	</h2>
+	<ul dir="rtl">
+	<li>Memory Creation Phase (Creation Phase)</li>
+		<li>Execution Phase</li>
+</ul>
+
+<h3 dir="rtl">
+ Memory Creation Phase
+</h3>
+	
+1. 	ایجاد global object ؛ (browser: window, Node.js: global)
+2. ایجاد `this` object و bind آن به global object
+3. راه‌اندازی memory heap برای ذخیره متغیرها و رفرنس‌های توابع
+4. ذخیره توابع و متغیرها در execution context و مقداردهی اولیه 'undefined' در متغیرها
+
+<h3 dir="rtl">
+ Execution Phase
+</h3>
+	
+1. 	اجرای خط به خط کد
+2. ایجاد execution context جدید برای هر فراخوانی تابع
