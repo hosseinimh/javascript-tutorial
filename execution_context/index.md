@@ -91,13 +91,17 @@ func1(1, 2, 3);
 
 <br />
 
+<h2 dir="rtl">
+ Global Execution Context
+</h2>
 <div align="center">
   
 ![Global Execution Context](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/images/global_execution_context.gif)
 </div>
 
-<br />
-
+<h2 dir="rtl">
+ Function Execution Context
+</h2>
 <div align="center">
   
 ![Function Execution Context](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/images/function_execution_context.gif)
@@ -114,4 +118,9 @@ Call Stack
 
 <div dir="rtl">
 Call Stack ترتیب اجرای execution context ها را مدیریت می‌کند. فرآیند ذخیره‌سازی داده‌ها در استک، LIFO است یعنی آخرین ورودی اولین خروجی. با اجرای کد جاوااسکریپت، ابتدا global execution context در Call Stack؛ push می‌شود. هر بار که تابعی فراخوانی می‌شود exection context آن در استک push شده و بعد از برگشت از تابع pop می‌شود. به این ترتیب جاوااسکریپت دقیقا می‌داند که چه اسکوپ و متغیرهایی هم اکنون در حال استفاده است. فرآیند push و pop با اجرای خط به خط کد ادامه پیدا می‌کند تا در انتها با رسیدن به آخرین خط کد، global execution context نیز از Call Stack خارج شده و استک خالی می‌شود.
+</div>
+
+<div align="center">
+  
+![Call Stack](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/images/call_stack.png)
 </div>
