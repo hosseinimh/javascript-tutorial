@@ -53,7 +53,7 @@ Execution Context چیست؟
 	</h2>
 	<ul dir="rtl">
 	<li>Memory Creation Phase (Creation Phase)</li>
-		<li>Execution Phase</li>
+	<li>Execution Phase</li>
 </ul>
 
 <h3 dir="rtl">
@@ -64,6 +64,21 @@ Execution Context چیست؟
 2. ایجاد `this` object و bind آن به global object
 3. راه‌اندازی memory heap برای ذخیره متغیرها و رفرنس‌های توابع
 4. ذخیره توابع و متغیرها در execution context و مقداردهی اولیه 'undefined' در متغیرها
+<br/>
+در function execution context؛ global object نداریم بلکه متغیری به نام arguments ایجاد و مقداردهی می‌شود که شامل آرایه‌ای از 
+ورودی‌های تابع است.
+
+```js
+function func1(a, b, c) {
+  console.log(arguments[0]); // 1
+
+  console.log(arguments[1]); // 2
+
+  console.log(arguments[2]); // 3
+}
+
+func1(1, 2, 3);
+```
 
 <h3 dir="rtl">
  Execution Phase
