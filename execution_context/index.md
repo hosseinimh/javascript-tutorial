@@ -65,8 +65,10 @@ Execution Context چیست؟
 3. راه‌اندازی memory heap برای ذخیره متغیرها و رفرنس‌های توابع
 4. ذخیره توابع و متغیرها در execution context و مقداردهی اولیه 'undefined' در متغیرها
 <br/>
+<div dir="rtl">
 در function execution context؛ global object نداریم بلکه متغیری به نام arguments ایجاد و مقداردهی می‌شود که شامل آرایه‌ای از 
 ورودی‌های تابع است.
+</div>
 
 ```js
 function func1(a, b, c) {
@@ -86,3 +88,12 @@ func1(1, 2, 3);
 	
 1. 	اجرای خط به خط کد
 2. ایجاد execution context جدید برای هر فراخوانی تابع
+
+<h2 dir="rtl">
+Call Stack
+	</h2>
+
+<div align="center">
+  
+![The Call Stack](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/images/call_stack.jpg)
+</div>
