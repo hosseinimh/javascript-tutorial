@@ -116,7 +116,9 @@ Scope chain
 	</h2>
 
 <div align="center">
+
 ![Scope chain](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/assets/scope_chain.jpg)
+
 </div>
 
 <div dir="rtl">
@@ -126,7 +128,9 @@ Scope ها سلسله‌مراتبی‌اند به طوری که scope فرزن�
 </div>
 
 <div align="center">
+
 ![Scope chain](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/assets/scope_chain.png)
+
 </div>
 
 <div dir="rtl">
