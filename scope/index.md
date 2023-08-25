@@ -12,7 +12,7 @@ Scope چیست؟
 </h2>
 
 <div dir="rtl">
-سطح در دسترس متغیرها را تعیین می‌کند. در واقع scope؛ execution context فعلی است که نشان می‌دهد در حال حاضر کدام متغیرها، توابع و اشیا قابل دسترسند. Scope ها سلسله‌مراتبی‌اند به طوری که scope فرزند به scope همه پدران خود دسترسی دارد اما عکس آن نه.
+سطح در دسترس متغیرها را تعیین می‌کند. در واقع scope؛ execution context فعلی است که نشان می‌دهد در حال حاضر کدام متغیرها، توابع و اشیا قابل دسترسند.
 </div>
 
 <h2 dir="rtl">
@@ -95,7 +95,7 @@ console.log(result);
 Block Scope
 	</h3>
 <div dir="rtl">
-به یک مجموعه خطوط کد داخل آکولادهای باز و بسته نوشته می‌شود block گفته می‌شود. تنها متغیرهایی که توسط let و const تعریف می‌شوند دارای block scope هستند.
+به یک مجموعه خطوط کد داخل آکولادهای باز و بسته نوشته می‌شود block گفته می‌شود. تنها متغیرهایی که توسط let و const تعریف می‌شوند دارای block scope هستند. متغیرهای تعریف شده توسط var؛ function scope هستند.
 </div>
 
 ```js
@@ -104,4 +104,31 @@ Block Scope
 }
 console.log(x);
 // Uncaught ReferenceError: x is not defined
+
+{
+  var y = 5;
+}
+console.log(y); // 5
 ```
+
+<h2 dir="rtl">
+Scope chain
+	</h2>
+
+<div align="center">
+![Scope chain](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/assets/scope_chain.jpg)
+</div>
+
+<div dir="rtl">
+Scope ها سلسله‌مراتبی‌اند به طوری که scope فرزند به scope همه پدران خود دسترسی دارد اما عکس آن صادق نیست.
+	<br/>
+	Scope chain زنجیره‌ای از scope های والد فرزندی هستند که برای پیدا کردن یک متغیر یا تابع در آن جستجو می‌شوند.
+</div>
+
+<div align="center">
+![Scope chain](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/assets/scope_chain.png)
+</div>
+
+<div dir="rtl">
+وقتی متغیری در کد استفاده می‌شود، موتور جاوااسکریپت سعی می‌کند مقدار آن را در scope فعلی پیدا کند. اگر نتوانست در scope بالاتر جستجو می‌کند و این کار را تا زمانی که به global scope برسد ادامه می‌دهد.
+</div>
