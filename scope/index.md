@@ -143,10 +143,18 @@ Lexical Environment
 	</h2>
 	
 <div dir="rtl">
-هنگامی که موتور جاوااسکریپت execution context جدیدی می‌سازد، در فاز execution آن، lexical environment را برای نگهداری متغیرهای درون آن Scope ایجاد می‌کند.
+هنگامی که موتور جاوااسکریپت execution context جدیدی می‌سازد، در فاز execution آن، Lexical Environment را برای نگهداری متغیرهای درون آن Scope ایجاد می‌کند.
 	<br />
 	Lexical environment ساختار داده‌ای حاوی نگاشتی از شناسه / مقدار است که در آن شناسه نام متغیر یا تابع و مقدار برابر مقدار متغیر و یا ارجاعی به تابع است.
 </div>
+
+<h4 dir="rtl">
+Lexical Environment شامل دو قسمت است:	</h4>
+
+<ul dir="rtl">
+	<li>Environment record: محلی برای نگهداری متغیرها و توابع به همراه مقادیر و ارجاعاتشان</li>
+		<li>ارجاع به outer environment: ارجاع به Lexical Environment والد</li>
+</ul>
 
 ```js
 let language = "JavaScript";
@@ -175,4 +183,28 @@ functionLexicalEnvironment = {
   }
   outer: <globalLexicalEnvironment>
 }
+```
+
+<h2 dir="rtl">
+Lexical Scope
+	</h2>
+	
+<div dir="rtl">
+محلی که متغیر یا تابع تعریف شده را Lexical scope می‌گویند. Lexical scope توانایی یک function scope به دسترسی به متغیرهای scope والد است.
+</div>
+
+```js
+var a = 10;
+var func = function () {
+  var b = 20;
+  console.log("a and b is accessible (outer):", a, b);
+  var innerFunc = function () {
+    var c = 30;
+    console.log("a and b and c is accessible (inner):", a, b, c);
+  };
+  innerFunc();
+  return;
+};
+func();
+console.log("only a is accessible (global):", a);
 ```
