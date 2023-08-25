@@ -4,7 +4,7 @@ Execution Context
 
 <div align="center">
   
-![Execution Context](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/images/execution_context.png)
+![Execution Context](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/assets/execution_context.png)
 </div>
 
 <h2 dir="rtl">
@@ -96,7 +96,7 @@ func1(1, 2, 3);
 </h2>
 <div align="center">
   
-![Global Execution Context](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/images/global_execution_context.gif)
+![Global Execution Context](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/assets/global_execution_context.gif)
 </div>
 
 <h2 dir="rtl">
@@ -104,7 +104,7 @@ func1(1, 2, 3);
 </h2>
 <div align="center">
   
-![Function Execution Context](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/images/function_execution_context.gif)
+![Function Execution Context](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/assets/function_execution_context.gif)
 </div>
 
 <h2 dir="rtl">
@@ -113,7 +113,7 @@ Call Stack
 
 <div align="center">
   
-![The Call Stack](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/images/call_stack.jpg)
+![The Call Stack](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/assets/call_stack.jpg)
 </div>
 
 <div dir="rtl">
@@ -122,5 +122,5 @@ Call Stack ترتیب اجرای execution context ها را مدیریت می�
 
 <div align="center">
   
-![Call Stack](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/images/call_stack.png)
+![Call Stack](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/assets/call_stack.png)
 </div>
