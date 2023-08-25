@@ -125,6 +125,7 @@ Scope chain
 Scope ها سلسله‌مراتبی‌اند به طوری که scope فرزند به scope همه پدران خود دسترسی دارد اما عکس آن صادق نیست.
 	<br/>
 	Scope chain زنجیره‌ای از scope های والد فرزندی هستند که برای پیدا کردن یک متغیر یا تابع در آن جستجو می‌شوند.
+	<br />
 </div>
 
 <div align="center">
@@ -136,3 +137,42 @@ Scope ها سلسله‌مراتبی‌اند به طوری که scope فرزن�
 <div dir="rtl">
 وقتی متغیری در کد استفاده می‌شود، موتور جاوااسکریپت سعی می‌کند مقدار آن را در scope فعلی پیدا کند. اگر نتوانست در scope بالاتر جستجو می‌کند و این کار را تا زمانی که به global scope برسد ادامه می‌دهد.
 </div>
+
+<h2 dir="rtl">
+Lexical Environment
+	</h2>
+	
+<div dir="rtl">
+هنگامی که موتور جاوااسکریپت execution context جدیدی می‌سازد، در فاز execution آن، lexical environment را برای نگهداری متغیرهای درون آن Scope ایجاد می‌کند.
+	<br />
+	Lexical environment ساختار داده‌ای حاوی نگاشتی از شناسه / مقدار است که در آن شناسه نام متغیر یا تابع و مقدار برابر مقدار متغیر و یا ارجاعی به تابع است.
+</div>
+
+```js
+let language = "JavaScript";
+function a() {
+  const b = "Dart";
+  console.log("Inside function a");
+}
+a();
+console.log("Global execution context");
+```
+
+```js
+globalLexicalEnvironment = {
+  environmentRecord: {
+      language    : 'JavaScript',
+      a : < reference to function object >
+  }
+  outer: null
+}
+```
+
+```js
+functionLexicalEnvironment = {
+  environmentRecord: {
+      b    : 'Dart',
+  }
+  outer: <globalLexicalEnvironment>
+}
+```
