@@ -7,6 +7,25 @@ Event bubbling
 ![Event bubbling](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/assets/event_bubbling.jpg)
 </div>
 
+<div dir="rtl">
+هرگاه یک عنصر HTML داخل عنصر دیگری باشد و هر دوی این عناصر event مشترکی را هندل کنند، آن گاه ترتیب انتشار (اجرا) event handler در بین این عناصر به یکی از دو روش زیر صورت می گیرد:
+
+<ul>
+<li>
+Event bubbling: در این حالت event ابتدا توسط داخلی ترین عنصر هندل می شود و سپس به عناصر بیرونی انتشار می یابد.
+		</li>
+	
+<div align="center">
+  
+![Event bubbling](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/assets/event_bubbling.png)
+</div>
+	
+	<li>
+Event capturing: در این حالت event ابتدا توسط بیرونی ترین عنصر هندل می شود و سپس به عناصر داخلی انتشار می یابد.
+		</li>
+	</ul>
+</div>
+
 <h2 dir="rtl">
 Event Deligation چیست؟
 </h2>
@@ -15,9 +34,9 @@ Event Deligation چیست؟
 الگویی برای بهینه هندل کردن event هاست. در این الگو، به‌جای افزودن event listener برای هر عنصر HTML، یک event listener به عنصر والد اضافه کرده و از پارامتر event در تابع callback برای شناسایی عنصر target و نحوه هندل کردن آن استفاده می‌کنیم.
 	<br/>
 		<br/>
-	فرض کنید لیستی داینامیک داریم که میخواهیم با کلیک بر روی هر آیتم یک event فراخوانی شود.
+	فرض کنید لیستی داینامیک داریم که می‌خواهیم با کلیک بر روی هر آیتم یک event فراخوانی شود.
 	<br/>
-	یکی از راه ها اختصاص event listener به هر کدام از آیتم هاست.
+	یکی از راه‌ها اختصاص event listener به هر کدام از آیتم‌هاست.
 </div>
 
 <div align="center">
@@ -39,7 +58,7 @@ for (var i = 1; i <= 10; i++) {
 ```
 
 <div dir="rtl">
-راه حل دیگر تعیین نماینده یا deligate برای فراخوانی event است.
+راه‌حل دیگر تعیین نماینده یا deligate برای فراخوانی event است.
 </div>
 
 <div align="center">
