@@ -30,6 +30,23 @@ Event capturing: در این حالت event ابتدا توسط بیرونی ت�
 </div>
 
 <h2 dir="rtl">
+ترتیب انتشار Event؛ (Event Propagation) شامل سه فاز است:
+	</h2>
+	
+<div dir="rtl">
+1- <b>Capturing Phase</b>: در طول این فاز، event از بالاترین عنصر صفحه یعنی شی window، سپس document، سپس html و در نهایت event.target (عنصری که event را تریگر کرده) انتشار می یابد.
+	<br/>
+	2- <b>Target Phase</b>: دومین فاز وقتی است که به event.target می رسد.
+		<br/>
+	3- <b>Bubbling Phase</b>: این فاز از event.target شروع شده و به عناصر والد انتشار می یابد.
+</div>
+
+<div align="center">
+  
+![Event Propagation](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/assets/event_propagation.png)
+</div>
+
+<h2 dir="rtl">
 Event Deligation چیست؟
 </h2>
 
@@ -101,3 +118,13 @@ customUI.addEventListener("click", responding);
 <ul dir="rtl">
 	<li>برخی از event ها مثل focus یا blur؛ bubble نمی‌شوند.</li>
 </ul>
+
+<h2 dir="rtl">
+تفاوت stopPropagation و preventDefault
+</h2>
+
+<div dir="rtl">
+stopPropagation از انتشار بیشتر event فعلی در فازهای capturing و bubbling جلوگیری می کند.
+	<br/>
+	preventDefault از عمل پیش فرض مرورگر در زمان وقوع event جلوگیری می کند. 
+</div>
