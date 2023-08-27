@@ -10,17 +10,20 @@ Event bubbling
 <div dir="rtl">
 هرگاه یک عنصر HTML داخل عنصر دیگری باشد و هر دوی این عناصر event مشترکی را هندل کنند، آن گاه ترتیب انتشار (اجرا) event handler در بین این عناصر به یکی از دو روش زیر صورت می گیرد:
 
-<ul>
+<br />	
+<br />	
+<ul dir="rtl">
 <li>
 Event bubbling: در این حالت event ابتدا توسط داخلی ترین عنصر هندل می شود و سپس به عناصر بیرونی انتشار می یابد.
 		</li>
-	
+<br />	
 <div align="center">
-  
+
 ![Event bubbling](https://raw.githubusercontent.com/hosseinimh/javascript-tutorial/main/assets/event_bubbling.png)
+
 </div>
 	
-	<li>
+<li>
 Event capturing: در این حالت event ابتدا توسط بیرونی ترین عنصر هندل می شود و سپس به عناصر داخلی انتشار می یابد.
 		</li>
 	</ul>
